@@ -61,3 +61,36 @@ void afisareElementeCuCifraDominantaComuna(int v[], int dim) {
 		}
 	}
 }
+int nrCifreDistincte(int n) {
+	int nrc = 0;
+	while (n != 0) {
+		int cifra = n % 10;
+		int nr = n;
+		int x = 0;
+		for (int i = 0; nr > 0; nr = nr / 10) {
+			i = nr % 10;
+			if (i == cifra) {
+				x++;
+			}
+		}
+		if (x <= 1) {
+			nrc++;
+		}
+		n = n / 10;
+	}
+	return nrc;
+}
+void bubbleSortDescDupaNrCifreDistincte(int v[], int dim) {
+	bool aff = true;
+	do {
+		aff = true;
+		for (int j = 0; j < dim - 1; j++) {
+			if (nrCifreDistincte(v[j]) < nrCifreDistincte(v[j + 1])) {
+				int aux = v[j];
+				v[j] = v[j + 1];
+				v[j + 1] = aux;
+				aff = false;
+			}
+		}
+	} while (aff == false);
+}

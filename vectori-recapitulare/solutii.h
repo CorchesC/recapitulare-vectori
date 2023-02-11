@@ -15,3 +15,10 @@ void sol2() {
 	citire(v, d);
 	afisareElementeCuCifraDominantaComuna(v,d);
 }
+void sol3() {
+	//Fie un tablou unidimensional cu n elemente valori naturale. Sa se ordoneze descrescator aceste valor dupa numarul de cifre distincte pe care le contin.
+	int v[100], d = 0;
+	citire(v, d);
+	bubbleSortDescDupaNrCifreDistincte(v, d);
+	afisare(v, d);
+}
