@@ -9,3 +9,9 @@ void sol1() {
 	stergereCrescator(v, d);
 	afisare(v, d);
 }
+void sol2() {
+	//Se considera un vector cu n elemente naturale. Sa se afiseze pe linii, elementele din A grupate dupa cifra dominanta (prima in scrierea zecoimala). Pe aceeasi linie vor fi scrise elementele cu acceasi cifra dominanta.
+	int v[100], d = 0;
+	citire(v, d);
+	afisareElementeCuCifraDominantaComuna(v,d);
+}
