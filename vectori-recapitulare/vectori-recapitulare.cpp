@@ -2,5 +2,6 @@
 
 int main()
 {
-	sol1();
+	//sol1();
+	sol2();
 }

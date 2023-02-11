@@ -42,3 +42,22 @@ void stergereCrescator(int v[], int& dim) {
 		}
 	}
 }
+int cifraDominanta(int n) {
+	int cd = 0;
+	while (n != 0) {
+		int cifra = n % 10;
+		cd = cifra;
+		n = n / 10;
+	}
+
+	return cd;
+}
+void afisareElementeCuCifraDominantaComuna(int v[], int dim) {
+	for (int i = 0; i < 10; i++) {
+		for (int x = 0; x < dim; x++) {
+			if (cifraDominanta(v[x]) == i) {
+				cout << v[x] << " ";
+			}
+		}
+	}
+}
