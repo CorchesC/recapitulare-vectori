@@ -157,3 +157,35 @@ void numaratorNumintor(int v[], int dim) {
 		stergere(v, dim, min);
 	}
 }
+int nrCifre(int n) {
+	int nrc = 0;
+	while (n != 0) {
+		nrc++;
+		n = n / 10;
+	}
+	return nrc;
+}
+int alipireDouaNumerePozitive(int n, int m) {
+	if (n < 0) {
+		n = n * (-1);
+	}
+	if (m < 0) {
+		m = m * (-1);
+	}
+	int nrM = nrCifre(m); 
+	int pwr = pow(10, nrM);
+	int nrNou = (n * pwr) + m;
+	return nrNou;
+}
+void alipireSol6(int v[], int& dim) {
+	for (int i = 0; i < dim-1; i++) {
+		if (v[i] < 0 && v[i + 1] > 0) {
+			inserare(v, dim, i+1, alipireDouaNumerePozitive(v[i], v[i + 1]));
+			i++;
+		}
+		if (v[i] > 0 && v[i + 1] < 0) {
+			inserare(v, dim, i+1, alipireDouaNumerePozitive(v[i], v[i + 1]));
+			i++;
+		}
+	}
+}

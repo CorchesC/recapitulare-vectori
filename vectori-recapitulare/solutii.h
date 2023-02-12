@@ -35,3 +35,11 @@ void sol5() {
 	citire(v, d);
 	numaratorNumintor(v, d);
 }
+void sol6() {
+	//(36) Se considera un vector ce contine n elemente inregi. In fata orcarui element precedat de un element se semn contar se introduce un element pozitiv, a carui valaore este obtinuta prin alipriea cifrelor celor doua numere de semne contrare in ordine.
+	//Sa se afiseze continutul vectorului dupa efectuarea operatiilor cerute.
+	int v[100], d = 0;
+	citire(v, d);
+	alipireSol6(v, d);
+	afisare(v, d);
+}
