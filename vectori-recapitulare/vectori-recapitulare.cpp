@@ -7,5 +7,6 @@ int main()
 	//sol3();
 	//sol4(); /
 	//sol5();
-	sol6();
+	//sol6();
+	sol7();
 }

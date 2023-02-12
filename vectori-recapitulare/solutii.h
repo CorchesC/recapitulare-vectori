@@ -43,3 +43,13 @@ void sol6() {
 	alipireSol6(v, d);
 	afisare(v, d);
 }
+void sol7() {
+	//Fie un tablou unidimensional cu 2*n elemente valori naturale. Din vector sunt sterse pe rand elemente din k in k pozitii. Numararea pozitiilor se va face cu revenire la prima in cazul in care indicele curent este mai mare decat n. Operatia se repeta de n ori.
+	//Determinati pozitia de inceput a numaratorii, astfel incat elementele ramase sa aiba suma maxima. Se va afisa pozitia de inceput a numaratorii si suma elementelor ramse in vector.
+	int v[100], d = 0;
+	citire(v, d);
+	cout << "Introduceti k: " << endl;
+	int k;
+	cin >> k;
+	stergereSol7(v,d,k);
+}
