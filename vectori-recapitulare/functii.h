@@ -189,3 +189,33 @@ void alipireSol6(int v[], int& dim) {
 		}
 	}
 }
+int sumaElemente(int v[], int dim) {
+	int s = 0;
+	for (int i = 0; i < dim; i++) {
+		s += v[i];
+	}
+	return s;
+
+}
+
+
+void stergereSol7(int v[], int&dim,int k) {
+	int smax = -1;
+	int poz = 0;
+	int ct = 0;
+	int n = dim;
+	while (ct < n) {
+		for (int i = k; i < dim; i += k) {
+			stergere(v, dim, i);
+		}
+		afisare(v, dim);
+		//logica suma
+		int s = sumaElemente(v, dim);
+		if (s > smax) {
+			smax = s;
+			poz = ct;
+		}
+		ct++;
+	}
+	cout << smax << " " << poz << endl;
+}
