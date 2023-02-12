@@ -94,3 +94,66 @@ void bubbleSortDescDupaNrCifreDistincte(int v[], int dim) {
 		}
 	} while (aff == false);
 }
+void bubbleSort(int v[], int dim) {
+	bool aff = true;
+	do {
+		aff = true;
+		for (int j = 0; j < dim - 1; j++) {
+			if (v[j] > v[j + 1]) {
+				int aux = v[j];
+				v[j] = v[j + 1];
+				v[j + 1] = aux;
+				aff = false;
+			}
+		}
+	} while (aff == false);
+}
+void bubbleSortDescDupaFractie(int v[], int dim) {
+	bool aff = true;
+	do {
+		aff = true;
+		for (int j = 0; j < dim - 1; j++) {
+			if ((v[j] % 10) < (v[j + 1] % 10)) {
+				int aux = v[j];
+				v[j] = v[j + 1];
+				v[j + 1] = aux;
+				aff = false;
+			}
+		}
+	} while (aff == false);
+}
+void sortareSol4(int v[], int dim) {
+	bubbleSort(v, dim);
+	bubbleSortDescDupaFractie(v, dim);
+}
+int elementMaximPoz(int v[], int dim) {
+	int eMax = -1;
+	int poz = 0;
+	for (int i = 0; i < dim; i++) {
+		if (v[i] > eMax) {
+			eMax = v[i];
+			poz = i;
+		}
+	}
+	return poz;
+}
+int elementMinimPoz(int v[], int dim) {
+	int eMin = 9999;
+	int poz = 0;
+	for (int i = 0; i < dim; i++) {
+		if (v[i] < eMin) {
+			eMin = v[i];
+			poz = i;
+		}
+	}
+	return poz;
+}
+void numaratorNumintor(int v[], int dim) {
+	while (dim > 0) {
+		int max = elementMaximPoz(v, dim);
+		int min = elementMinimPoz(v, dim);
+		cout << v[max] << " " << v[min] << endl;
+		stergere(v, dim, max);
+		stergere(v, dim, min);
+	}
+}
